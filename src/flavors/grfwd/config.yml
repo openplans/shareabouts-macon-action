@@ -1,11 +1,11 @@
 # Settings for the app
 app:
   # HTML Title
-  title: Shareabouts
+  title: GR Forward
   # Header name
-  name: Shareabouts
+  name: GR Forward
   # Meta description that will show up in Google search results
-  meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  meta_description: _(When you think of Downtown Grand Rapids and the Grand River, do you find yourself thinking about what's there now, or do you imagine the potential of what could be?)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -21,129 +21,52 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: 39.9523524
-      lng: -75.1636075
+      lat: 42.96766027349807
+      lng: -85.67194868344814
     zoom: 14
-    minZoom: 10
-    maxZoom: 17
+    minZoom: 11
+    maxZoom: 16
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-    - url: /static/data/philadelphia.geojson
-      type: json
-      rules:
-        - condition: 'true'
-          style:
-            color: "#444"
-            opacity: 0.6
-            fillOpacity: 0.1
-            weight: 1
 
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  landmark:
-    label: _(Landmark)
+  observation:
+    label: _(Observation)
     rules:
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} < 13 && {{layer.focused}} === false'
-        # Display landmarks as circles (vectors) when zoomed out
-
+      - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === false'
         style:
-          color: '#0d85e9'
-          radius: 3
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 1
-
-      - condition: '"{{location_type}}" === "landmark" && {{map.zoom}} >= 13 && {{layer.focused}} === false'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/dot-0d85e9.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-
-      - condition: '"{{location_type}}" === "landmark" && {{layer.focused}} === true'
-        # Display landmarks as icons when zoomed in
-
-        icon:
-          iconUrl: /static/css/images/markers/marker-0d85e9.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-  park:
-    label: _(Park)
-    rules:
-      - condition: '"{{location_type}}" === "park" && {{layer.focused}}'
-        # Show parks that are points as icons...
-
-        icon:
-          iconUrl: /static/css/images/markers/marker-4bbd45.png
-          shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [25, 41]
-          shadowSize: [41, 41]
-          iconAnchor: [12, 41]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 3
-          opacity: 0.9
-          fillOpacity: 0.7
-
-      - condition: '"{{location_type}}" === "park"'
-        # Show parks that are points as icons...
-
-        icon:
-          iconUrl: /static/css/images/markers/dot-4bbd45.png
-          iconSize: [17, 18]
-          iconAnchor: [9, 9]
-
-        # ...and parks that are polygons as shapes.
-
-        style:
-          color: '#4bbd45'
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-  school:
-    label: _(School)
-    rules:
-      - condition: '"{{location_type}}" === "school" && {{submission_sets.comments.length}} > 0'
-        # Display schools as circles
-
-        style:
-          color: '#f95016'
-          radius: 8
+          color: '#34C5C3'
+          radius: 12
           weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 4
-          opacity: 0.9
-          fillOpacity: 0.4
-
-      - condition: '"{{location_type}}" === "school"'
+          opacity: 0.7
+          fillOpacity: 0.8
+      - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === true'
         style:
-          color: '#f95016'
-          radius: 8
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-        focus_style:
-          color: '#f95016'
-          radius: 16
-          weight: 1
-          opacity: 0.9
-          fillOpacity: 0.4
-
-
+          color: '#34C5C3'
+          radius: 12
+          weight: 6
+          opacity: 1
+          fillOpacity: 0.8
+  idea:
+    label: _(Idea)
+    rules:
+      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === false'
+        style:
+          color: '#FF8B00'
+          radius: 12
+          weight: 4
+          opacity: 0.7
+          fillOpacity: 0.8
+      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
+        style:
+          color: '#FF8B00'
+          radius: 12
+          weight: 6
+          opacity: 1
+          fillOpacity: 0.8
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
@@ -152,15 +75,14 @@ activity:
 
 place:
   adding_supported: true
-  add_button_label: _(Add a Place)
+  add_button_label: _(Share your ideas)
   # Labels for the buttons that toggle the map and list views
-  show_list_button_label: _(List All Places)
-  show_map_button_label: _(Show the Map)
-  action_text: _(added)
+  show_list_button_label: _(Show as a list)
+  show_map_button_label: _(Show on a map)
+  action_text: _(shared)
   title: _(Tell us more...)
-  action_text: _(created)
   anonymous_name: _(Someone)
-  submit_button_label: _(Submit)
+  submit_button_label: _(Put it on the map)
   items:
     - prompt: _(Your Name)
       type: text
@@ -180,7 +102,19 @@ place:
           value: _(Email address)
         - key: size
           value: 30
-    - prompt: _(Location Name)
+    - prompt: _(What are you sharing?)
+      type: select
+      options:
+        - label: _(Choose One)
+          value: ''
+        - label: _(An observation)
+          value: observation
+        - label: _(An idea)
+          value: idea
+      name: location_type
+      attrs:
+        - key: required
+    - prompt: _(Where is it?)
       type: text
       name: name
       attrs:
@@ -189,21 +123,7 @@ place:
         - key: size
           value: 30
         - key: required
-    - prompt: _(Location Type)
-      type: select
-      options:
-        - label: _(Choose One)
-          value: ''
-        - label: _(Landmark)
-          value: landmark
-        - label: _(Park)
-          value: park
-        - label: _(School)
-          value: school
-      name: location_type
-      attrs:
-        - key: required
-    - prompt: _(Description)
+    - prompt: _(Describe it)
       type: textarea
       name: description
       optional: true
@@ -256,27 +176,11 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    # start_page: true
+    start_page: true
 
-  - title: _(Why Shareabouts?)
-    slug: why
-    url: /static/pages/why.html
-
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
-
-  - title: _(Links)
-    pages:
-      - title: _(Documentation)
-        external: true
-        url: https://github.com/openplans/shareabouts/tree/master/doc
-      - title: _(Issues)
-        external: true
-        url: https://github.com/openplans/shareabouts/issues
-      - title: _(GitHub)
-        external: true
-        url: https://github.com/openplans/shareabouts
+  - title: _(Back to GRForward.org)
+    external: true
+    url: http://GRForward.org/
 
 notifications:
   on_new_place: true
