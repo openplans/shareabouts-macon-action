@@ -1,22 +1,29 @@
-/*
- * This CSS file follows the default Shareabouts style.css.
- * All rules herein will override the default Shareabouts styles.
- * NOTE: "With great power comes great responsibility."
- */
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+@import url(//openplans.github.io/planbox-themes/grandrapids-forward/alte_haas_grotesk_bold/alte_haas_grotesk_bold.css);
+@import url(//openplans.github.io/planbox-themes/grandrapids-forward/custom.css);
 
-
-/* =Header
--------------------------------------------------------------- */
-
-
-/* =Media Queries
--------------------------------------------------------------- */
-
-@media only screen and (min-width: 768px) {
+body {
+/*  background-color: #fff;*/
+}
+#site-header,
+#colophon {
+  display: none;
 }
 
-@media only screen and (min-width: 1024px) {
-}
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 60em) {
+
+  /* site-header and colophon are hidden */
+  #map-container {
+    top: 0;
+    bottom: 0;
+  }
+  #content {
+    top: 0;
+    bottom: 0;
+  }
+  #ticker {
+    top: 0;
+  }
+
 }
