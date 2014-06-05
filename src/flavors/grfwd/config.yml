@@ -176,7 +176,6 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    start_page: true
 
   - title: _(Back to GRForward.org)
     external: true
