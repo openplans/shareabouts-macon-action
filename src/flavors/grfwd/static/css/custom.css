@@ -10,6 +10,73 @@ body {
   display: none;
 }
 
+.btn, .btn:visited, .btn:link, .button, button {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: #63c2c0;
+  color: #fff;
+  border: 0;
+}
+.btn:hover, .button:hover, button:hover {
+  background-color: #235358;
+}
+
+.btn-primary, .btn-primary:visited, .btn-primary:link {
+  background-color: #235358;
+  color: #fff;
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background-color: #f15723;
+}
+
+
+label {
+  font-family: 'Alte Haas Grotesk Bold', serif;
+}
+input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+  border: 0.25em solid #f5e96f;
+  font-family: 'Roboto Slab', serif;
+}
+input:focus, textarea:focus {
+  border: 0.25em solid #235358;
+  outline: 2px solid #235358;
+}
+
+.user-support label {
+  color: #fff;
+}
+.user-support input[type=checkbox]:checked ~ label {
+}
+.user-support:hover label {
+  background-color: #235358;
+  color: #fff;
+}
+
+
+/* =The Ticker
+-------------------------------------------------------------- */
+
+#ticker {
+  background-color: #58ad31;
+}
+.recent-points a {
+  color: #fff;
+  border-top: 1px solid #65C738;
+  border-bottom: 1px solid #4B942A;
+}
+.recent-points a:hover {
+  color: #fff;
+  background: #63c2c0;
+  border-color: rgba(0,0,0,0.1);
+}
+
+/* TODO: I CAN HAS AUTH? NO! SORRY.  */
+.avatar { display: none; }
+.recent-points a { padding-left: 0.5em; }
+.place-submission-details { padding-left: 0; }
+.or-sign-in { display: none; }
 
 @media only screen and (min-width: 60em) {
 
