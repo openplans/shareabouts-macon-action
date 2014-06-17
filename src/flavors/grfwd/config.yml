@@ -19,6 +19,7 @@ app:
 map:
   geolocation_enabled: true
   geolocation_onload: false
+  scrollWheelZoom: false
   options:
     center:
       lat: 42.96766027349807
