@@ -19,7 +19,6 @@ app:
 map:
   geolocation_enabled: true
   geolocation_onload: false
-  scrollWheelZoom: false
   options:
     center:
       lat: 42.96766027349807
@@ -27,6 +26,7 @@ map:
     zoom: 14
     minZoom: 11
     maxZoom: 16
+    scrollWheelZoom: false
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
       attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
