@@ -38,36 +38,33 @@ place_types:
     label: _(Observation)
     rules:
       - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === false'
-        style:
-          color: '#34C5C3'
-          radius: 12
-          weight: 4
-          opacity: 0.7
-          fillOpacity: 0.8
+        icon:
+          iconUrl: /static/css/images/dot-observation.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
       - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === true'
-        style:
-          color: '#34C5C3'
-          radius: 12
-          weight: 6
-          opacity: 1
-          fillOpacity: 0.8
+        icon:
+          iconUrl: /static/css/images/marker-observation.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [40, 48]
+          shadowSize: [59, 48]
+          iconAnchor: [20, 47]
   idea:
     label: _(Idea)
     rules:
       - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === false'
-        style:
-          color: '#FF8B00'
-          radius: 12
-          weight: 4
-          opacity: 0.7
-          fillOpacity: 0.8
+        icon:
+          iconUrl: /static/css/images/dot-idea.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
       - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
-        style:
-          color: '#FF8B00'
-          radius: 12
-          weight: 6
-          opacity: 1
-          fillOpacity: 0.8
+        icon:
+          iconUrl: /static/css/images/marker-idea.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [40, 48]
+          shadowSize: [59, 48]
+          iconAnchor: [20, 47]
+
 activity:
   # Optional. Activity is supported by default. Set to false to disable.
   enabled: true
