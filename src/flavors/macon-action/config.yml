@@ -1,11 +1,11 @@
 # Settings for the app
 app:
   # HTML Title
-  title: GR Forward
+  title: Macon Action Plan
   # Header name
-  name: GR Forward
+  name: Macon Action Plan
   # Meta description that will show up in Google search results
-  meta_description: _(When you think of Downtown Grand Rapids and the Grand River, do you find yourself thinking about what's there now, or do you imagine the potential of what could be?)
+  meta_description: _(Macon's urban core is changing in exciting ways. How would you like Downtown and nearby neighborhoods to change or stay the same?)
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -21,11 +21,11 @@ map:
   geolocation_onload: false
   options:
     center:
-      lat: 42.96766027349807
-      lng: -85.67194868344814
-    zoom: 14
-    minZoom: 11
-    maxZoom: 16
+      lat: 32.8405967
+      lng: -83.628398
+    zoom: 15
+    minZoom: 13
+    maxZoom: 18
     scrollWheelZoom: false
   layers:
     - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
@@ -34,34 +34,124 @@ map:
 # The keys show up in the dropdown list when you are adding a new place
 # The values map the place type to map icons (defined below).
 place_types:
-  observation:
-    label: _(Observation)
+  housing:
+    label: _(Housing)
     rules:
-      - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "housing" && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/dot-observation.png
+          iconUrl: /static/css/images/dot-housing.png
           iconSize: [20, 20]
           iconAnchor: [10, 10]
-      - condition: '"{{location_type}}" === "observation" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "housing" && {{layer.focused}} === true'
         icon:
-          iconUrl: /static/css/images/marker-observation.png
+          iconUrl: /static/css/images/marker-housing.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [40, 48]
-          shadowSize: [59, 48]
-          iconAnchor: [20, 47]
-  idea:
-    label: _(Idea)
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  business:
+    label: _(Business)
     rules:
-      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === false'
+      - condition: '"{{location_type}}" === "business" && {{layer.focused}} === false'
         icon:
-          iconUrl: /static/css/images/dot-idea.png
+          iconUrl: /static/css/images/dot-business.png
           iconSize: [20, 20]
           iconAnchor: [10, 10]
-      - condition: '"{{location_type}}" === "idea" && {{layer.focused}} === true'
+      - condition: '"{{location_type}}" === "business" && {{layer.focused}} === true'
         icon:
-          iconUrl: /static/css/images/marker-idea.png
+          iconUrl: /static/css/images/marker-business.png
           shadowUrl: /static/css/images/marker-shadow.png
-          iconSize: [40, 48]
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  streetsparking:
+    label: _(Streets/Parking)
+    rules:
+      - condition: '"{{location_type}}" === "streetsparking" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-streetsparking.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "streetsparking" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-streetsparking.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  walkingbiking:
+    label: _(Walking/Biking)
+    rules:
+      - condition: '"{{location_type}}" === "walkingbiking" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-walkingbiking.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "walkingbiking" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-walkingbiking.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  publicsafety:
+    label: _(Public Safety)
+    rules:
+      - condition: '"{{location_type}}" === "publicsafety" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-publicsafety.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "publicsafety" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-publicsafety.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  parksriver:
+    label: _(Parks/River)
+    rules:
+      - condition: '"{{location_type}}" === "parksriver" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-parksriver.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "parksriver" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-parksriver.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  publicspace:
+    label: _(Public Space)
+    rules:
+      - condition: '"{{location_type}}" === "publicspace" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-publicspace.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "publicspace" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-publicspace.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
+          shadowSize: [80, 60]
+          iconAnchor: [25, 58]
+  other:
+    label: _(Other)
+    rules:
+      - condition: '"{{location_type}}" === "other" && {{layer.focused}} === false'
+        icon:
+          iconUrl: /static/css/images/dot-other.png
+          iconSize: [20, 20]
+          iconAnchor: [10, 10]
+      - condition: '"{{location_type}}" === "other" && {{layer.focused}} === true'
+        icon:
+          iconUrl: /static/css/images/marker-other.png
+          shadowUrl: /static/css/images/marker-shadow.png
+          iconSize: [50, 60]
           shadowSize: [59, 48]
           iconAnchor: [20, 47]
 
@@ -105,10 +195,22 @@ place:
       options:
         - label: _(Choose One)
           value: ''
-        - label: _(An observation)
-          value: observation
-        - label: _(An idea)
-          value: idea
+        - label: _(Housing)
+          value: housing
+        - label: _(Business)
+          value: business
+        - label: _(Streets/Parking)
+          value: streetsparking
+        - label: _(Walking/Biking)
+          value: walkingbiking
+        - label: _(Public Safety)
+          value: publicsafety
+        - label: _(Parks/River)
+          value: parksriver
+        - label: _(Public Space)
+          value: publicspace
+        - label: _(Other)
+          value: other
       name: location_type
       attrs:
         - key: required
@@ -175,9 +277,9 @@ pages:
     slug: about
     name: overview
 
-  - title: _(Back to GRForward.org)
-    external: true
-    url: http://GRForward.org/
+  # - title: _(Back to GRForward.org)
+    # external: true
+    # url: http://GRForward.org/
 
 notifications:
   on_new_place: true
