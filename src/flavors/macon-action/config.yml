@@ -19,6 +19,9 @@ app:
 map:
   geolocation_enabled: true
   geolocation_onload: false
+
+  geocoding_enabled: false
+
   options:
     center:
       lat: 32.8405967
