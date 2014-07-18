@@ -6,6 +6,9 @@ app:
   name: Shareabouts
   # Meta description that will show up in Google search results
   meta_description: _(Shareabouts is a mapping tool to gather crowd sourced public input. Use it to collect suggested locations and comments in a social, engaging process.)
+  # Meta author that will show up in Google search results
+  meta_author: OpenPlans.org
+
 
   # When the map loads, existing places will be loaded in chunks. By default,
   # the size of the chunks will be a reasonable default dictated by the API
@@ -19,6 +22,11 @@ app:
 map:
   geolocation_enabled: true
   geolocation_onload: false
+
+  geocoding_enabled: true
+  geocode_field_label: _(Enter an address...)
+  geocode_bounding_box: [39.830159, -75.478821, 40.167331, -74.781189]  # top, left, bottom, right
+
   options:
     center:
       lat: 39.9523524
@@ -161,6 +169,9 @@ place:
   action_text: _(created)
   anonymous_name: _(Someone)
   submit_button_label: _(Submit)
+
+  location_item_name: location
+
   items:
     - prompt: _(Your Name)
       type: text
@@ -183,12 +194,12 @@ place:
     - prompt: _(Location Name)
       type: text
       name: name
+      optional: true
       attrs:
         - key: placeholder
           value: _(Location Name)
         - key: size
           value: 30
-        - key: required
     - prompt: _(Location Type)
       type: select
       options:
