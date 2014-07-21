@@ -1,15 +1,26 @@
 @import url(//fonts.googleapis.com/css?family=Bitter:700|Dancing+Script|Merriweather:300,300italic,700,700italic);
 
-body {
+/* =Base Styles
+-------------------------------------------------------------- */
+
+/* Links */
+a, a:active, a:visited {
+  color: #63c2c0;
+}
+a:hover {
+  color: #f15723;
+}
+
+/* Typography */
+body, select, input, textarea {
   font-family: 'Merriweather', serif;
   font-weight: 300;
 }
-#site-header,
-#colophon {
-  display: none;
-}
 
-.btn, .btn:visited, .btn:link, .button, button {
+/* Buttons */
+.btn,
+.btn:visited,
+.btn:link {
   font-family: Bitter, serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -20,7 +31,6 @@ body {
 .btn:hover, .button:hover, button:hover {
   background-color: #3ec1cd;
 }
-
 .btn-primary, .btn-primary:visited, .btn-primary:link {
   background-color: #41505b;
   color: #fff;
@@ -29,22 +39,181 @@ body {
 .btn-primary:hover {
   background-color: #3ec1cd;
 }
+.btn-secondary,
+.btn-secondary:visited,
+.btn-secondary:link {
+  background-color: #3ec1cd;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background-color: #41505b;
+  color: #fff;
+}
+.btn-disabled,
+.btn-disabled:visited,
+.btn-disabled:link,
+.btn-disabled:hover {
+  background-color: #eee;
+  color: #ccc;
+  box-shadow: none;
+}
 
-
+/* Forms */
 label {
   font-family: 'Merriweather', serif;
   font-weight: 700;
 }
-input[type=date], input[type=datetime], input[type=datetime-local], input[type=email], input[type=month], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], textarea {
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+textarea {
   border: 0.25em solid #dae6ee;
   font-family: 'Merriweather', serif;
   font-weight: 300;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border: 0.25em solid #ffa93b;
   outline: 2px solid #feee58;
 }
 
+.form-submitted input:invalid,
+.form-submitted textarea:invalid,
+.form-submitted select:invalid {
+  outline: 2px solid #b2182b;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-header {
+  color: inherit;
+  background-color: #e7eef3;
+}
+#site-title {
+  color: #eee;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  text-shadow: 1px -1px 1px rgba(0,0,0,0.5);
+  max-width: 58%;
+  margin: 0;
+}
+#site-title a:link,
+#site-title a:visited {
+  font-size: 2em;
+  color: #eee;
+  float: left;
+  height: 100%;
+}
+#site-title a:hover {
+  color: #fff;
+}
+.site-logo {
+  display: block;
+  max-height: 1.25em;
+  width: auto;
+}
+@media only screen and (min-width: 60em) {
+  #site-title {
+    max-width: none;
+    margin-right: 0.5em;
+  }
+  .site-logo {
+    max-height: 100%;
+  }
+}
+
+/* Navigation Button */
+#nav-btn {
+  font-family: "Helvetica Neue", Arial, Helvetica, serif; /* Careful changin' this! */
+  background: #6f6f6f;
+  color: #bbb;
+  text-shadow: -1px 1px 1px rgba(0,0,0,0.25);
+}
+
+/* User Menu */
+#sign-in-btn {
+  color: #41505b;
+  font-weight: 700;
+}
+#sign-in-btn:hover {
+  color: #3ec1cd;
+}
+a.logout-btn {
+  color: #a3c7d9;
+}
+
+
+/* =Map
+-------------------------------------------------------------- */
+
+/* Add Place Button */
+#add-place-btn-container {
+  background: #777;
+  border-bottom: 1px solid #666;
+}
+
+/* Drag Marker Instructions (for adding a new place) */
+.drag-marker-instructions,
+.drag-marker-warning {
+  background-color: rgba(240,240,0,0.2);
+  color: #444;
+}
+.drag-marker-warning {
+  background-color: rgba(242, 206, 206, 0.8);
+}
+
+/* Ajax Error Message */
+#ajax-error-msg {
+  color: #8D5251;
+  border: 1px solid #CFABAB;
+  background-color: rgba(242, 206, 206, 0.8);
+}
+
+
+/* =Progress Bars
+-------------------------------------------------------------- */
+
+.progress-bar {
+  background: rgba(85,85,85,0.5);
+}
+.progress-bar strong {
+  color: #fff;
+  text-shadow: 0 0 0.25em rgba(85,85,85,1);
+}
+.progress-bar span {
+  background: #00aaff;
+}
+
+
+/* =Content: Pages & Places
+-------------------------------------------------------------- */
+
+#content {
+  background: #fff;
+}
+
+/* Close Button */
+a.close-btn {
+  font-family: "Helvetica Neue", Arial, Helvetica, serif; /* Careful changin' this! */
+  background: #fff;
+  color: #ff5e99;
+}
+a.close-btn:hover {
+  color: #cd2c67;
+}
+
+/* Promotion: Voting & Sharing */
 .user-support label {
   color: #fff;
 }
@@ -53,6 +222,29 @@ input:focus, textarea:focus {
 .user-support:hover label {
   background-color: #3ec1cd;
   color: #fff;
+}
+
+/* Places */
+.response-date {
+  text-transform: uppercase;
+  color: #888;
+}
+.response-date a {
+  color: #888;
+}
+.response-date a:hover {
+  color: #00aaff;
+}
+
+/* Surveys */
+.response-body {
+  border-top-color: #a8a8a8;
+  border-right-color: #c8c8c8;
+  border-left-color: #c8c8c8;
+  background: #eee;
+}
+.response-body:after {
+  border-top-color: #eee;
 }
 
 
@@ -77,26 +269,133 @@ input:focus, textarea:focus {
   text-transform: lowercase;
 }
 
-/* TODO: I CAN HAS AUTH? NO! SORRY.  */
-.avatar { display: none; }
-.recent-points a { padding-left: 0.5em; }
-.place-submission-details { padding-left: 0; }
-.or-sign-in { display: none; }
-.response-header { padding-left: 0; }
+
+/* =List View
+-------------------------------------------------------------- */
+
+#list-container {
+  background: #fff;
+}
+
+/* Search & Sort */
+.list-sort-menu {
+  color: #eee;
+  text-transform: uppercase;
+}
+.list-sort-prompt {
+  color: #999;
+}
+.list-sort-menu a {
+}
+.list-sort-menu a.is-selected {
+  color: #555;
+}
+
+/* Place List */
+.place-list > li {
+  border-top: 1px solid #eeeeee;
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+  background-color: #41505b;
+  color: #ddd;
+}
+
+/* Powered By - Please do not change these. */
+a.shareabouts-logo {
+  font-family: 'Dancing Script', cursive;
+  color: #a3c7d9;
+}
+a.shareabouts-logo:hover {
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+#powered-by a.openplans-logo {
+  font-family: "Helvetica Neue", Arial, Helvetica, serif;
+  color: #ffb885;
+}
+#powered-by a.openplans-logo:hover {
+  color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/* =Media Queries
+-------------------------------------------------------------- */
+
+@media only screen and (min-height: 440px) and (max-width: 60em) {
+}
+
+@media only screen and (min-height: 568px) and (max-width: 60em) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 60em) {
+}
 
 @media only screen and (min-width: 60em) {
+  .access li:hover > ul,
+  .access li:hover > form > ul {
+    background: #ccc;
+    border-color: rgba(0,0,0,0.05);
+  }
+  #pages-nav-container ul li:first-child {
+    display: none;
+  }
+  .sign-in-menu {
+    background: #666;
+  }
+  .sign-in-menu:before {
+    border-bottom-color: #666;
+  }
 
-  /* site-header and colophon are hidden */
-  #map-container {
-    top: 0;
-    bottom: 0;
-  }
-  #content {
-    top: 0;
-    bottom: 0;
-  }
-  #ticker {
-    top: 0;
+  #add-place-btn-container {
+    background: transparent;
+    border-bottom: 0;
   }
 
+  .list-toggle-nav {
+    float: left;
+  }
+  .list-toggle-btn,
+  .list-toggle-btn:visited,
+  .list-toggle-btn:link {
+    min-width: 11.5em;
+    background-color: #3ec1cd;
+    color: #fff;
+  }
+  .list-toggle-btn:hover {
+    background-color: #41505b;
+    color: #fff;
+  }
+  .show-the-map:before {
+    content: '\27A4';
+    margin: 0 0.375em;
+    display: inline-block;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 30% 60%;
+        -ms-transform-origin: 30% 60%;
+            transform-origin: 30% 60%;
+
+  }
+  .show-the-list:before {
+    content: '\2630';
+    margin: 0 0.375em;
+    text-shadow: -0.25em 0 0 #3ec1cd, -0.25em -1px 0 #3ec1cd, -0.25em 1px 0 #3ec1cd, -0.375em 0 0 #fff;
+  }
+  .list-toggle-btn:hover .show-the-list:before {
+    text-shadow: -0.25em 0 0 #41505b, -0.25em -1px 0 #41505b, -0.25em 1px 0 #41505b, -0.375em 0 0 #fff;
+  }
+
+}
+
+@media only screen and (min-width: 80em) {
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 }

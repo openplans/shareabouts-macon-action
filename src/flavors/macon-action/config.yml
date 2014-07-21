@@ -276,13 +276,14 @@ support:
   anonymous_name: _(Someone)
 
 pages:
+  - title: _(Back to GRForward.org)
+    external: true
+    url: http://GRForward.org/
+
   - title: _(About)
     slug: about
     name: overview
-
-  # - title: _(Back to GRForward.org)
-    # external: true
-    # url: http://GRForward.org/
+    start_page: true
 
 notifications:
   on_new_place: true
