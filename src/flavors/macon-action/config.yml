@@ -276,9 +276,9 @@ support:
   anonymous_name: _(Someone)
 
 pages:
-  - title: _(Back to GRForward.org)
+  - title: _(Back to maconactionplan.com)
     external: true
-    url: http://GRForward.org/
+    url: http://maconactionplan.com/
 
   - title: _(About)
     slug: about
