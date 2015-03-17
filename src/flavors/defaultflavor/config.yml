@@ -35,8 +35,8 @@ map:
     minZoom: 10
     maxZoom: 17
   layers:
-    - url: http://{s}.tiles.mapbox.com/v3/openplans.map-dmar86ym/{z}/{x}/{y}.png
-      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+    - url: http://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png
+      attribution: '&copy; OpenStreetMap contributors, CC-BY-SA. <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>. Geocoding Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">.'
     - url: /static/data/philadelphia.geojson
       type: json
       rules:
@@ -177,6 +177,7 @@ place:
       type: text
       name: submitter_name
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Name)
@@ -186,6 +187,7 @@ place:
       type: text
       name: private-submitter_email
       optional: true
+      sticky: true
       attrs:
         - key: placeholder
           value: _(Email address)
@@ -235,6 +237,8 @@ survey:
 
   # Response config
   show_responses: true
+  # Set to true if the user should only submit a survey once
+  single_submission: false
   response_name: _(comment)
   response_plural_name: _(comments)
   action_text: _(commented on)
@@ -254,6 +258,7 @@ survey:
     - prompt: _(Your Name)
       type: text
       name: submitter_name
+      sticky: true
 
 support:
   submission_type: support
@@ -267,15 +272,17 @@ pages:
   - title: _(About)
     slug: about
     name: overview
-    # start_page: true
+    start_page: true
 
-  - title: _(Why Shareabouts?)
-    slug: why
-    url: /static/pages/why.html
+  - title: _(More...)
+    pages:
+      - title: _(Why Shareabouts?)
+        slug: why
+        url: /static/pages/why.html
 
-  - title: _(Features)
-    slug: features
-    url: /static/pages/features.html
+      - title: _(Features)
+        slug: features
+        url: /static/pages/features.html
 
   - title: _(Links)
     pages:

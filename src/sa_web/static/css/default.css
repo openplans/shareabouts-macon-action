@@ -209,6 +209,13 @@ textarea {
   height: 6.5em;
   resize: none;
 }
+
+/* Old IE does not like this to be combine with :invalid rules.
+   It will ignore it! */
+.form-submitted .gatekeeper-invalid {
+  outline: 2px solid #b2182b;
+}
+
 .form-submitted input:invalid,
 .form-submitted textarea:invalid,
 .form-submitted select:invalid {
@@ -469,6 +476,10 @@ a.logout-btn {
   border-bottom: 1px solid #666;
 }
 #add-place {}
+
+.content-visible #add-place-btn-container {
+  display: none; /* hide the add button on mobile when the panel is open */
+}
 
 /* Center Point (new point icon) */
 #centerpoint {
@@ -1163,6 +1174,15 @@ input.geocode-address-field:focus {
   margin-bottom: 0;
 }
 
+.geocode-spinner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 2em;
+  background-color: #6f6f6f;
+}
+
 
 /* =Footer
 -------------------------------------------------------------- */
@@ -1440,6 +1460,12 @@ a.close-unsupported-overlay {
   #add-place-btn-container .btn:link {
     padding-right: 1em;
     padding-left: 1em;
+  }
+  .content-visible #add-place-btn-container {
+    display: block; /* override of the mobile style */
+  }
+  .place-form-visible #add-place-btn-container {
+    display: none;
   }
 
   /* Content */
