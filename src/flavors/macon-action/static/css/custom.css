@@ -399,3 +399,27 @@ a.shareabouts-logo:hover {
 
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
 }
+
+        #auth-nav-container {
+          display: none;
+        }
+        .or-sign-in {
+          display: none;
+        }
+        div #reply {
+          display: none;
+        }
+        a.reply-link.btn.btn-small {
+          display: none;
+        }
+
+        .support .user-support:hover {
+          background-color: #41505b;
+          color: #fff;
+          cursor: default;
+        }
+
+        .support .user-support:hover label {
+          background-color: transparent;
+          color: #fff;
+        }
